@@ -1,2 +1,2 @@
 const { sum, multiply } = require("./bigNumbers");
-console.log(sum("3", "34"));
+console.log(multiply("3", "3345457658679789"));

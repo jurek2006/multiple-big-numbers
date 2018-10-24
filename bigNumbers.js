@@ -5,7 +5,7 @@ const equalStrLength = (a, b) => {
     return [a.padStart(length, "0"), b.padStart(length, "0")];
 };
 
-const sum = (a, b) => {
+const sumNumbersAsStrings = (a, b) => {
     // sum numbers as strings (handle "big numbers", bigger than safe integer in js)
     //adding two positive integer numbers in strings, returning sum as a string
     [a, b] = equalStrLength(a, b); //getsame numbers with leading 0 for shorter one
@@ -21,7 +21,7 @@ const sum = (a, b) => {
     return sumString;
 };
 
-const multiply = (a, b) => {
+const multiplyNumbersAsStrings = (a, b) => {
     // multiply numbers as strings (handle "big numbers", bigger than safe integer in js)
     //multiplies two positive integer numbers in strings, returning result as a string
     if (a * b < Number.MAX_SAFE_INTEGER) {
@@ -55,6 +55,6 @@ const multiply = (a, b) => {
 };
 
 module.exports = {
-    sum,
-    multiply
+    sum: sumNumbersAsStrings,
+    multiply: multiplyNumbersAsStrings
 };
