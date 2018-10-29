@@ -43,7 +43,7 @@ const multiplyNumbersAsStrings = (a, b) => {
             stringRes = multiplicationRes;
         } else {
             //if result is bigger than safe we use the funkction itself but multiplying b[i] * a
-            // console.log(`Unsafe: ${a}*${b[i]}`)
+            console.log(`Unsafe: ${a}*${b[i]}`);
             stringRes = multiplyNumbersAsStrings(b[i], a);
         }
         //add '0' at the and and convert stringRes to string
@@ -55,6 +55,7 @@ const multiplyNumbersAsStrings = (a, b) => {
 };
 
 module.exports = {
+    equal: equalStrLength,
     sum: sumNumbersAsStrings,
     multiply: multiplyNumbersAsStrings
 };
