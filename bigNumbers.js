@@ -14,6 +14,12 @@ exports.multiply = (numStr1, numStr2) => {
     // resultReversed works the same way as converted numbers to arrays above (index is power of ten)
     // so we just need to reverse array and join to get result of multiplication
 
+    // if given numStr1 or numsStr2 contains chars different than digits - return undefined
+    const onlyDigitsRegex = /^\d+$/;
+    if (!onlyDigitsRegex.test(numStr1) || !onlyDigitsRegex.test(numStr2)) {
+        return;
+    }
+
     const aArray = reverse(numStr1.split("").map(Number));
     const bArray = reverse(numStr2.split("").map(Number));
     let resultReversed = new Array(aArray.length + bArray.length).fill(0);

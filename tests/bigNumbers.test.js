@@ -2,6 +2,16 @@ const expect = require("expect");
 const { multiply } = require("../bigNumbers");
 
 describe("multiply", () => {
+    it('should return undefined as not "number in string" given', () => {
+        expect(multiply("", "222")).toBeUndefined();
+        expect(multiply("3435", "")).toBeUndefined();
+        expect(multiply("", "")).toBeUndefined();
+        expect(multiply("3456.5", "34456")).toBeUndefined();
+        expect(multiply("3456", "34456,7")).toBeUndefined();
+        expect(multiply("3456", "344dfsf")).toBeUndefined();
+        expect(multiply("dfsdg", "344")).toBeUndefined();
+        expect(multiply("+", "344")).toBeUndefined();
+    });
     it("should multiply numbers as strings", () => {
         expect(multiply("1234", "22")).toEqual("27148");
         expect(multiply("45456679", "1")).toEqual("45456679");
@@ -15,7 +25,7 @@ describe("multiply", () => {
         expect(multiply("55465", "1")).toEqual("55465");
         expect(multiply("55465", "0")).toEqual("0");
     });
-    it("should multiply huge numbers as strings", () => {
+    it("should multiply big numbers as strings", () => {
         expect(
             multiply(
                 "6207210569734828763632162297565699667016155174379106021472867952609589947344596060208965593169619010678733163923",
